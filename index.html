@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calmi – Mental Well-being</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Language selector */
+    .language-selector {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      z-index: 1000;
+    }
+    select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #c4a2f9;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero button {
+      background-color: white;
+      color: #7b4cff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Prioritize Mental Health Section */
+    .prioritize {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 60px 20px;
+      background-color: #f9f8fc;
+      flex-wrap: wrap;
+    }
+
+    .prioritize .content {
+      max-width: 500px;
+      padding: 20px;
+    }
+
+    .prioritize h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .prioritize p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .prioritize button {
+      background-color: #7b4cff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .prioritize button:hover {
+      background-color: #6a3ee0;
+    }
+
+    .prioritize .image img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .service-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #f3f1fc;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 300px;
+      max-width: 320px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 15px rgba(123, 76, 255, 0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #7b4cff;
+    }
+
+    .card p {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .card button {
+      background-color: #7b4cff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 0.3s ease;
+    }
+
+    .card button:hover {
+      background-color: #6a3ee0;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background-color: #f4efff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .testimonial-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 300px;
+      font-size: 1rem;
+      color: #555;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial h4 {
+      margin-top: 1rem;
+      color: #7b4cff;
+      font-weight: 600;
+    }
+
+    /* FAQ Section */
+    .faq {
+      padding: 60px 20px;
+      background-color: #fff;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .faq-flex {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .faq-list {
+      flex: 1 1 400px;
+    }
+
+    .faq-item {
+      background-color: #f9f8fc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.2rem;
+      color: #7b4cff;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .faq-image {
+      flex: 0 0 250px;
+    }
+
+    .faq-image img {
+      max-width: 250px;
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Footer Section */
+    .footer {
+      background-color: #f4efff;
+      padding: 40px 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .footer-brand img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      max-width: 250px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .footer-contact,
+    .footer-social {
+      max-width: 250px;
+    }
+
+    .footer-contact h4,
+    .footer-social h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #7b4cff;
+    }
+
+    .footer-contact p,
+    .footer-social a {
+      font-size: 0.95rem;
+      color: #555;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-social a:hover {
+      text-decoration: underline;
+      color: #6a3ee0;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .prioritize {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .prioritize .image {
+        margin-top: 20px;
+      }
+
+      .service-cards,
+      .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card,
+      .testimonial {
+        max-width: 90%;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-contact,
+      .footer-social,
+      .footer-brand {
+        max-width: none;
+      }
+
+      .faq-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      .faq-image {
+        margin-top: 20px;
+        flex: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <select id="language-select" aria-label="Select Language">
+      <option value="en" selected>English</option>
+      <option value="fr">Français</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ru">Русский</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-key="heroTitle">Support for Your Mental Well-being</h1>
+    <p data-key="heroSubtitle">Connect with licensed therapists, counsellors, and wellness coaches to support your journey.</p>
+    <button data-key="heroButton">Get Started</button>
+  </div>
+</section>
+
+
+  <!-- Prioritize Section -->
+  <section class="prioritize">
+    <div class="content">
+      <h2 data-key="prioritizeTitle">We Help You Prioritize Your Mental Health</h2>
+      <p data-key="prioritizeText">Whether you're new to mental wellness or on a journey already, Calmi makes support accessible, safe, and personalized.</p>
+      <button data-key="prioritizeButton">Book a Session</button>
+    </div>
+    <div class="image">
+      <img src="Illustration_3.png" alt="Meditation Illustration" />
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2 data-key="servicesTitle">Your Path to Well-being</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3 data-key="service1Title">Mindfulness & Meditation</h3>
+        <p data-key="service1Desc">Guided meditation and mindfulness practices to help you stay present and calm.</p>
+        <button data-key="service1Button">Learn More</button>
+      </div>
+      <div class="card">
+        <h3 data-key="service2Title">One-on-One Therapy</h3>
+        <p data-key="service2Desc">Personalized therapy sessions with licensed professionals for your unique needs.</p>
+        <button data-key="service2Button">Learn More</button>
+      </div>
+      <div class="card">
+        <h3 data-key="service3Title">Wellness Coaching</h3>
+        <p data-key="service3Desc">Support and guidance to develop healthy habits and manage stress effectively.</p>
+        <button data-key="service3Button">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2 data-key="testimonialsTitle">What Our Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p data-key="testimonial1Text">"Calmi has been life-changing. I never thought an app could make me feel this supported."</p>
+        <h4 data-key="testimonial1Author">— Ananya Sharma</h4>
+      </div>
+      <div class="testimonial">
+        <p data-key="testimonial2Text">"The one-on-one therapy helped me get through a really difficult phase. Highly recommend."</p>
+        <h4 data-key="testimonial2Author">— Rohan Mehta</h4>
+      </div>
+      <div class="testimonial">
+        <p data-key="testimonial3Text">"Mindfulness sessions are so easy to follow and calming. It’s now part of my daily routine."</p>
+        <h4 data-key="testimonial3Author">— Priya Desai</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <h2 data-key="faqTitle">Frequently Asked Questions</h2>
+    <div class="faq-flex">
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 data-key="faq1Question">Is Calmi suitable for beginners?</h3>
+          <p data-key="faq1Answer">Absolutely! Calmi is designed for everyone — whether you're starting your mental wellness journey or looking for continued support.</p>
+        </div>
+        <div class="faq-item">
+          <h3 data-key="faq2Question">Are the therapists licensed professionals?</h3>
+          <p data-key="faq2Answer">Yes, all our therapists are certified and experienced mental health professionals.</p>
+        </div>
+        <div class="faq-item">
+          <h3 data-key="faq3Question">How do I schedule a session?</h3>
+          <p data-key="faq3Answer">You can schedule a session directly through our website or through app. It's quick and easy.</p>
+        </div>
+      </div>
+      <div class="faq-image">
+        <img src="illustration_4.png" alt="FAQ Illustration" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="Logo__3.png" alt="Calmi Logo" />
+        <p data-key="footerBrandText">Calmi – Your companion for mental wellness.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4 data-key="footerContactTitle">Contact Us</h4>
+        <p>Email: support@calmi.com</p>
+        <p>Phone: +91-771XXXXXXX </p>
+        <p>Address: 123 Wellness Lane, New Delhi, India</p>
+      </div>
+
+      <div class="footer-social">
+        <h4 data-key="footerSocialTitle">Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/calmiapp/" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 Calmi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        heroTitle: "Support for Your Mental Well-being",
+        heroSubtitle: "Connect with kind and supportive professionals and tools to help you thrive, at any stage.",
+        heroButton: "Get Started",
+
+        prioritizeTitle: "We Help You Prioritize Your Mental Health",
+        prioritizeText: "Whether you're new to mental wellness or on a journey already, Calmi makes support accessible, safe, and personalized.",
+        prioritizeButton: "Book a Session",
+
+        servicesTitle: "Your Path to Well-being",
+        service1Title: "Mindfulness & Meditation",
+        service1Desc: "Guided meditation and mindfulness practices to help you stay present and calm.",
+        service1Button: "Learn More",
+        service2Title: "One-on-One Therapy",
+        service2Desc: "Personalized therapy sessions with licensed professionals for your unique needs.",
+        service2Button: "Learn More",
+        service3Title: "Wellness Coaching",
+        service3Desc: "Support and guidance to develop healthy habits and manage stress effectively.",
+        service3Button: "Learn More",
+
+        testimonialsTitle: "What Our Users Say?",
+        testimonial1Text: "\"Calmi has been life-changing. I never thought an app could make me feel this supported.\"",
+        testimonial1Author: "— Ananya Sharma",
+        testimonial2Text: "\"The one-on-one therapy helped me get through a really difficult phase. Highly recommend.\"",
+        testimonial2Author: "— Rohan Mehta",
+        testimonial3Text: "\"Mindfulness sessions are so easy to follow and calming. It’s now part of my daily routine.\"",
+        testimonial3Author: "— Priya Desai",
+
+        faqTitle: "Frequently Asked Questions",
+        faq1Question: "Is Calmi suitable for beginners?",
+        faq1Answer: "Absolutely! Calmi is designed for everyone — whether you're starting your mental wellness journey or looking for continued support.",
+        faq2Question: "Are the therapists licensed professionals?",
+        faq2Answer: "Yes, all our therapists are certified and experienced mental health professionals.",
+        faq3Question: "How do I schedule a session?",
+        faq3Answer: "You can schedule a session directly through our website or through app. It's quick and easy.",
+
+        footerBrandText: "Calmi – Your companion for mental wellness.",
+        footerContactTitle: "Contact Us",
+        footerSocialTitle: "Follow Us"
+      },
+      fr: {
+        heroTitle: "Soutien pour votre bien-être mental",
+        heroSubtitle: "Connectez-vous avec des professionnels bienveillants et des outils pour vous aider à prospérer, à tout moment.",
+        heroButton: "Commencer",
+
+        prioritizeTitle: "Nous vous aidons à prioriser votre santé mentale",
+        prioritizeText: "Que vous débutiez votre parcours de bien-être mental ou que vous soyez déjà en chemin, Calmi rend le soutien accessible, sûr et personnalisé.",
+        prioritizeButton: "Réserver une séance",
+
+        servicesTitle: "Votre chemin vers le bien-être?",
+        service1Title: "Pleine conscience & Méditation",
+        service1Desc: "Méditation guidée et pratiques de pleine conscience pour vous aider à rester présent et calme.",
+        service1Button: "En savoir plus",
+        service2Title: "Thérapie individuelle",
+        service2Desc: "Séances de thérapie personnalisées avec des professionnels agréés pour vos besoins uniques.",
+        service2Button: "En savoir plus",
+        service3Title: "Coaching de bien-être",
+        service3Desc: "Soutien et conseils pour développer des habitudes saines et gérer le stress efficacement.",
+        service3Button: "En savoir plus",
+
+        testimonialsTitle: "Ce que disent nos utilisateurs",
+        testimonial1Text: "\"Calmi a changé ma vie. Je ne pensais pas qu'une application pouvait me faire sentir aussi soutenu.\"",
+        testimonial1Author: "— Ananya Sharma",
+        testimonial2Text: "\"La thérapie individuelle m'a aidé à traverser une période très difficile. Je recommande vivement.\"",
+        testimonial2Author: "— Rohan Mehta",
+        testimonial3Text: "\"Les séances de pleine conscience sont faciles à suivre et apaisantes. Elles font désormais partie de ma routine quotidienne.\"",
+        testimonial3Author: "— Priya Desai",
+
+        faqTitle: "Questions fréquemment posées",
+        faq1Question: "Calmi convient-il aux débutants ?",
+        faq1Answer: "Absolument ! Calmi est conçu pour tout le monde, que vous commenciez votre parcours de bien-être mental ou que vous cherchiez un soutien continu.",
+        faq2Question: "Les thérapeutes sont-ils des professionnels agréés ?",
+        faq2Answer: "Oui, tous nos thérapeutes sont certifiés et expérimentés.",
+        faq3Question: "Comment puis-je planifier une séance ?",
+        faq3Answer: "Vous pouvez planifier une séance directement via notre site Web ou notre application. C'est rapide et facile.",
+
+        footerBrandText: "Calmi – Votre compagnon pour le bien-être mental.",
+        footerContactTitle: "Contactez-nous",
+        footerSocialTitle: "Suivez-nous"
+      },
+      hi: {
+        heroTitle: "आपके मानसिक स्वास्थ्य के लिए समर्थन",
+        heroSubtitle: "दयालु और सहायक पेशेवरों और उपकरणों से जुड़ें जो आपकी सहायता करते हैं, किसी भी चरण पर।",
+        heroButton: "शुरू करें",
+
+        prioritizeTitle: "हम आपकी मानसिक सेहत को प्राथमिकता देते हैं",
+        prioritizeText: "चाहे आप मानसिक स्वास्थ्य में नए हों या पहले से सफर पर हों, Calmi सहायता को सुलभ, सुरक्षित और व्यक्तिगत बनाता है।",
+        prioritizeButton: "सेशन बुक करें",
+
+        servicesTitle: "आपकी खुशहाली का रास्ता",
+        service1Title: "माइंडफुलनेस और ध्यान",
+        service1Desc: "मार्गदर्शित ध्यान और माइंडफुलनेस अभ्यास जो आपको शांत और वर्तमान में रहने में मदद करते हैं।",
+        service1Button: "अधिक जानें",
+        service2Title: "एक-से-एक थेरेपी",
+        service2Desc: "आपकी विशिष्ट जरूरतों के लिए प्रमाणित पेशेवरों के साथ व्यक्तिगत थेरेपी सत्र।",
+        service2Button: "अधिक जानें",
+        service3Title: "वेलनेस कोचिंग",
+        service3Desc: "स्वस्थ आदतें विकसित करने और तनाव को प्रभावी ढंग से प्रबंधित करने के लिए समर्थन और मार्गदर्शन।",
+        service3Button: "अधिक जानें",
+
+        testimonialsTitle: "हमारे उपयोगकर्ता क्या कहते हैं?",
+        testimonial1Text: "\"Calmi ने मेरी ज़िंदगी बदल दी। मैंने कभी नहीं सोचा था कि एक ऐप मुझे इतना सहारा दे सकता है।\"",
+        testimonial1Author: "— अनन्या शर्मा",
+        testimonial2Text: "\"एक-से-एक थेरेपी ने मुझे एक मुश्किल दौर से निकलने में मदद की। अत्यधिक अनुशंसा।\"",
+        testimonial2Author: "— रोहन मेहता",
+        testimonial3Text: "\"माइंडफुलनेस सत्र अनुसरण करने में आसान और शांत करने वाले हैं। यह अब मेरी दैनिक दिनचर्या का हिस्सा है।\"",
+        testimonial3Author: "— प्रिया देसाई",
+
+        faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+        faq1Question: "क्या Calmi शुरुआती लोगों के लिए उपयुक्त है?",
+        faq1Answer: "बिल्कुल! Calmi सभी के लिए डिज़ाइन किया गया है — चाहे आप मानसिक स्वास्थ्य की यात्रा शुरू कर रहे हों या निरंतर समर्थन ढूंढ रहे हों।",
+        faq2Question: "क्या थेरेपिस्ट प्रमाणित पेशेवर हैं?",
+        faq2Answer: "हाँ, हमारे सभी थेरेपिस्ट प्रमाणित और अनुभवी मानसिक स्वास्थ्य पेशेवर हैं।",
+        faq3Question: "मैं सेशन कैसे शेड्यूल करूं?",
+        faq3Answer: "आप हमारी वेबसाइट या ऐप के माध्यम से सीधे सेशन शेड्यूल कर सकते हैं। यह तेज़ और आसान है।",
+
+        footerBrandText: "Calmi – आपके मानसिक स्वास्थ्य का साथी।",
+        footerContactTitle: "संपर्क करें",
+        footerSocialTitle: "हमें फ़ॉलो करें"
+      },
+      ru: {
+        heroTitle: "Поддержка вашего психического здоровья",
+        heroSubtitle: "Свяжитесь с добрыми и поддерживающими специалистами и инструментами, которые помогут вам процветать на любом этапе.",
+        heroButton: "Начать",
+
+        prioritizeTitle: "Мы помогаем вам уделять приоритетное внимание вашему психическому здоровью",
+        prioritizeText: "Будь вы новичком в области психического здоровья или уже в пути, Calmi делает поддержку доступной, безопасной и персонализированной.",
+        prioritizeButton: "Записаться на сеанс",
+
+        servicesTitle: "Ваш путь к благополучию?",
+        service1Title: "Осознанность и медитация",
+        service1Desc: "Руководство по медитации и практики осознанности, которые помогут оставаться спокойным и сосредоточенным.",
+        service1Button: "Узнать больше",
+        service2Title: "Индивидуальная терапия",
+        service2Desc: "Персонализированные сеансы терапии с лицензированными специалистами для ваших уникальных потребностей.",
+        service2Button: "Узнать больше",
+        service3Title: "Коучинг по благополучию",
+        service3Desc: "Поддержка и руководство для формирования здоровых привычек и эффективного управления стрессом.",
+        service3Button: "Узнать больше",
+
+        testimonialsTitle: "Отзывы наших пользователей",
+        testimonial1Text: "\"Calmi изменил мою жизнь. Я никогда не думал, что приложение может так поддерживать.\"",
+        testimonial1Author: "— Аня Шарма",
+        testimonial2Text: "\"Индивидуальная терапия помогла мне пройти через сложный этап. Очень рекомендую.\"",
+        testimonial2Author: "— Рохан Мехта",
+        testimonial3Text: "\"Сеансы осознанности легко следовать и они успокаивают. Теперь это часть моей ежедневной рутины.\"",
+        testimonial3Author: "— Прия Десаи",
+
+        faqTitle: "Часто задаваемые вопросы",
+        faq1Question: "Подходит ли Calmi для начинающих?",
+        faq1Answer: "Абсолютно! Calmi создан для всех — независимо от того, начинаете ли вы путь психического здоровья или ищете постоянную поддержку.",
+        faq2Question: "Являются ли терапевты лицензированными специалистами?",
+        faq2Answer: "Да, все наши терапевты сертифицированы и имеют опыт работы в области психического здоровья.",
+        faq3Question: "Как записаться на сеанс?",
+        faq3Answer: "Вы можете записаться на сеанс напрямую через наш сайт или приложение. Это быстро и просто.",
+
+        footerBrandText: "Calmi – ваш спутник в психическом благополучии.",
+        footerContactTitle: "Свяжитесь с нами",
+        footerSocialTitle: "Подписывайтесь на нас"
+      },
+      de: {
+        heroTitle: "Unterstützung für Ihr mentales Wohlbefinden",
+        heroSubtitle: "Verbinden Sie sich mit freundlichen und unterstützenden Fachleuten und Tools, die Ihnen helfen, in jeder Phase zu gedeihen.",
+        heroButton: "Loslegen",
+
+        prioritizeTitle: "Wir helfen Ihnen, Ihre psychische Gesundheit zu priorisieren",
+        prioritizeText: "Ob Sie neu im Bereich mentales Wohlbefinden sind oder schon auf einer Reise, Calmi macht Unterstützung zugänglich, sicher und persönlich.",
+        prioritizeButton: "Termin buchen",
+
+        servicesTitle: "Ihr Weg zum Wohlbefinden?",
+        service1Title: "Achtsamkeit & Meditation",
+        service1Desc: "Geführte Meditationen und Achtsamkeitspraktiken, die Ihnen helfen, präsent und ruhig zu bleiben.",
+        service1Button: "Mehr erfahren",
+        service2Title: "Einzeltherapie",
+        service2Desc: "Personalisierte Therapiesitzungen mit zertifizierten Fachleuten für Ihre individuellen Bedürfnisse.",
+        service2Button: "Mehr erfahren",
+        service3Title: "Wellness-Coaching",
+        service3Desc: "Unterstützung und Anleitung zur Entwicklung gesunder Gewohnheiten und zur effektiven Stressbewältigung.",
+        service3Button: "Mehr erfahren",
+
+        testimonialsTitle: "Was unsere Nutzer sagen",
+        testimonial1Text: "\"Calmi hat mein Leben verändert. Ich hätte nie gedacht, dass eine App mich so unterstützen kann.\"",
+        testimonial1Author: "— Ananya Sharma",
+        testimonial2Text: "\"Die Einzeltherapie hat mir geholfen, eine wirklich schwierige Phase zu überstehen. Sehr zu empfehlen.\"",
+        testimonial2Author: "— Rohan Mehta",
+        testimonial3Text: "\"Die Achtsamkeitssitzungen sind so einfach zu folgen und beruhigend. Es ist jetzt Teil meiner täglichen Routine.\"",
+        testimonial3Author: "— Priya Desai",
+
+        faqTitle: "Häufig gestellte Fragen",
+        faq1Question: "Ist Calmi für Anfänger geeignet?",
+        faq1Answer: "Absolut! Calmi ist für alle konzipiert – egal, ob Sie Ihre mentale Wellness-Reise beginnen oder fortlaufende Unterstützung suchen.",
+        faq2Question: "Sind die Therapeuten zertifizierte Fachleute?",
+        faq2Answer: "Ja, alle unsere Therapeuten sind zertifizierte und erfahrene Fachleute im Bereich psychische Gesundheit.",
+        faq3Question: "Wie buche ich eine Sitzung?",
+        faq3Answer: "Sie können eine Sitzung direkt über unsere Website oder App buchen. Es ist schnell und einfach.",
+
+        footerBrandText: "Calmi – Ihr Begleiter für mentales Wohlbefinden.",
+        footerContactTitle: "Kontaktieren Sie uns",
+        footerSocialTitle: "Folgen Sie uns"
+      }
+    };
+
+    const languageSelect = document.getElementById('language-select');
+    const elementsToTranslate = document.querySelectorAll('[data-key]');
+
+    function updateLanguage(lang) {
+      elementsToTranslate.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    languageSelect.addEventListener('change', e => {
+      updateLanguage(e.target.value);
+    });
+
+    // Initialize default language
+    updateLanguage('en');
+  </script>
+</body>
+</html>

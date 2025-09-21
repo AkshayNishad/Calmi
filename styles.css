@@ -1,0 +1,158 @@
+/* 👇 CSS Starts Here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #c4a2f9;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero button {
+  background-color: white;
+  color: #7b4cff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Prioritize Mental Health Section */
+.prioritize {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background-color: #f9f8fc;
+  flex-wrap: wrap;
+}
+
+.prioritize .content {
+  max-width: 500px;
+  padding: 20px;
+}
+
+.prioritize h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.prioritize p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.prioritize button {
+  background-color: #7b4cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prioritize button:hover {
+  background-color: #6a3ee0;
+}
+
+.prioritize .image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f4efff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  font-size: 1rem;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial h4 {
+  margin-top: 1rem;
+  color: #7b4cff;
+  font-weight: 600;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .prioritize {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .prioritize .image {
+    margin-top: 20px;
+  }
+
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial {
+    max-width: 90%;
+  }
+}
+/* 👆 CSS Ends Here */
