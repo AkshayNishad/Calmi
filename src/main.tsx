@@ -4,6 +4,7 @@ import App from './App.tsx'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from './app/store/store.ts'
+import { ThemeProvider } from './contexts/ThemeContext'
 
 // Ensure root element exists and is not null
 const rootElement = document.getElementById('root');
@@ -12,7 +13,9 @@ if (rootElement) {
   createRoot(rootElement).render(
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
     </Provider>
   );
