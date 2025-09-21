@@ -1,0 +1,382 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Language selector */
+.language-selector {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.language-selector select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #c4a2f9;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero button {
+  background-color: white;
+  color: #7b4cff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Prioritize Mental Health Section */
+.prioritize {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background-color: #f9f8fc;
+  flex-wrap: wrap;
+}
+
+.prioritize .content {
+  max-width: 500px;
+  padding: 20px;
+}
+
+.prioritize h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.prioritize p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.prioritize button {
+  background-color: #7b4cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prioritize button:hover {
+  background-color: #6a3ee0;
+}
+
+.prioritize .image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Services Section */
+.services {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.service-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #f3f1fc;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 300px;
+  max-width: 320px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 15px rgba(123, 76, 255, 0.4);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #7b4cff;
+}
+
+.card p {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.card button {
+  background-color: #7b4cff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #6a3ee0;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f4efff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  font-size: 1rem;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial h4 {
+  margin-top: 1rem;
+  color: #7b4cff;
+  font-weight: 600;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 60px 20px;
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.faq-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.faq-list {
+  flex: 1 1 400px;
+}
+
+.faq-item {
+  background-color: #f9f8fc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #7b4cff;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.faq-image {
+  flex: 0 0 250px;
+}
+
+.faq-image img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #f4efff;
+  padding: 40px 20px;
+  color: #333;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-brand img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  max-width: 250px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.footer-contact,
+.footer-social {
+  max-width: 250px;
+}
+
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #7b4cff;
+}
+
+.footer-contact p,
+.footer-social a {
+  font-size: 0.95rem;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+  color: #6a3ee0;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .prioritize {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .prioritize .image {
+    margin-top: 20px;
+  }
+
+  .service-cards,
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .testimonial {
+    max-width: 90%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contact,
+  .footer-social,
+  .footer-brand {
+    max-width: none;
+  }
+
+  .faq-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .faq-image {
+    margin-top: 20px;
+    flex: none;
+  }
+}
