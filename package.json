@@ -11,10 +11,14 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.0",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.13",
+    "autoprefixer": "^10.4.21",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.1",
+    "tailwindcss": "^4.1.13",
     "zod": "^4.1.11"
   },
   "devDependencies": {
