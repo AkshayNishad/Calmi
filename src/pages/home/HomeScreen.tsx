@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ThemeToggle } from '../../components/ui/ThemeToggle';
 import { Footer } from '../../components/ui/Footer';
 import { TRANSLATIONS } from '../../utils/constants/app_constants';
 
 // Import assets
 import illustration3 from '../../assets/Illustration_3.png';
 import illustration4 from '../../assets/illustration_4.png';
-import logo from '../../assets/Logo__3.png';
+import darkLogo from '../../assets/dark_logo.svg';
+import whiteLogo from '../../assets/white_logo2.svg';
 
 export const HomeScreen: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -23,8 +23,12 @@ export const HomeScreen: React.FC = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900">
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 py-20 px-5 text-center overflow-hidden">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 mt-0 pb-20 px-5 text-center overflow-hidden">
+        <div className="flex justify-center mb-0 mt-0 pt-0">
+          <img src={whiteLogo} alt="Calmi Logo" className="w-80 h-80 block dark:hidden" />
+          <img src={darkLogo} alt="Calmi Logo" className="h-10 hidden dark:block" />
+        </div>
+        <div className="max-w-4xl mx-auto" mt-0 pt-0>
           <h1 className="text-5xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6">{t.heroTitle}</h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{t.heroSubtitle}</p>
         </div>
@@ -38,7 +42,7 @@ export const HomeScreen: React.FC = () => {
         >
           <path
             d="M0,60 C150,160 350,-20 500,60 L500,120 L0,120 Z"
-            fill="currentColor" className="text-white dark:text-gray-900"
+            fill="currentColor" className="text-purple-50 dark:text-gray-800"
           />
         </svg>
       </section>
